@@ -6,7 +6,7 @@ import Colors from "./Colors/Colors"
 
 const Sidebar = () => {
   return (
-    <>
+    
       <section className="sidebar">
         <div className="logo-container">
           <h1>🛒</h1>
@@ -16,7 +16,7 @@ const Sidebar = () => {
         <Colors/>
         
       </section>
-    </>
+  
   );
 };
 
