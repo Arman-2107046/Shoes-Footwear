@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import Nav from "./Navigation/Nav";
-import Products from "./Products/Products";
-import Recommended from "./Recommended/Recommended";
-import Sidebar from "./Sidebar/Sidebar";
-import Card from "./components/Card";
+import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import App from "../App";
 
-// import { products } from "./db/data";
 
 const products = [
   {
@@ -14,7 +9,7 @@ const products = [
     title: "Nike Air Monarch IV",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "white",
@@ -25,18 +20,19 @@ const products = [
     title: "Nike Air Vapormax Plus",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "red",
     category: "sneakers",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/51+P9uAvb1L._AC_UY695_.jpg",
     title: "Nike Waffle One Sneaker",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "green",
@@ -47,7 +43,7 @@ const products = [
     title: "Nike Running Shoe",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Adidas",
     color: "black",
@@ -58,7 +54,7 @@ const products = [
     title: "Flat Slip On Pumps",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Vans",
     color: "green",
@@ -69,51 +65,55 @@ const products = [
     title: "Knit Ballet Flat",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Adidas",
     color: "black",
     category: "flats",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg",
     title: "Loafer Flats",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Vans",
     color: "white",
     category: "flats",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/71VaQ+V6XnL._AC_UY695_.jpg",
     title: "Nike Zoom Freak",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "green",
     category: "sneakers",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
     title: "Nike Men's Sneaker",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Adidas",
     color: "blue",
     category: "sneakers",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
     title: "PUMA BLACK-OCE",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Puma",
     color: "green",
@@ -124,7 +124,7 @@ const products = [
     title: "Pacer Future Sneaker",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Puma",
     color: "red",
@@ -135,7 +135,7 @@ const products = [
     title: "Unisex-Adult Super",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Puma",
     color: "black",
@@ -146,7 +146,7 @@ const products = [
     title: "Roma Basic Sneaker",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Puma",
     color: "white",
@@ -157,18 +157,19 @@ const products = [
     title: "Pacer Future Doubleknit",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Puma",
     color: "black",
     category: "sneakers",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
     title: "Fusion Evo Golf Shoe",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "100",
     company: "Puma",
     color: "green",
@@ -179,7 +180,7 @@ const products = [
     title: "Rainbow Chex Skate",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "100",
     company: "Vans",
     color: "red",
@@ -190,7 +191,7 @@ const products = [
     title: "Low-Top Trainers",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "100",
     company: "Vans",
     color: "white",
@@ -201,7 +202,7 @@ const products = [
     title: "Vans Unisex Low-Top",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "100",
     company: "Vans",
     color: "blue",
@@ -212,7 +213,7 @@ const products = [
     title: "Classic Bandana Sneakers",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Nike",
     color: "black",
@@ -223,7 +224,7 @@ const products = [
     title: "Chunky High Heel",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Vans",
     color: "black",
@@ -234,9 +235,9 @@ const products = [
     title: "Slip On Stiletto High Heel",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "100",
-    company: "Puma",
+    company: "puma",
     color: "black",
     category: "heels",
   },
@@ -245,7 +246,7 @@ const products = [
     title: "DREAM PAIRS Court Shoes",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Nike",
     color: "red",
@@ -256,18 +257,19 @@ const products = [
     title: "Nike Air Vapormax Plus",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "red",
     category: "sneakers",
   },
+
   {
     img: "https://m.media-amazon.com/images/I/51PGWTXgf-L._AC_UY625_.jpg",
     title: "Low Mid Block Heels",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "200",
     company: "Nike",
     color: "black",
@@ -278,7 +280,7 @@ const products = [
     title: "Chunky High Heel",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Adidas",
     color: "black",
@@ -289,7 +291,7 @@ const products = [
     title: "Amore Fashion Stilettos",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "150",
     company: "Adidas",
     color: "white",
@@ -300,7 +302,7 @@ const products = [
     title: "Bridal Sandals Glitter",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Adidas",
     color: "black",
@@ -311,7 +313,7 @@ const products = [
     title: "Wedding Prom Bridal",
     star: <AiFillStar className="rating-star" />,
     reviews: "(123 reviews)",
-    prevPrice: "$140",
+    prevPrice: "$140,00",
     newPrice: "50",
     company: "Adidas",
     color: "black",
@@ -319,74 +321,38 @@ const products = [
   },
 ];
 
-const App = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [query, setQuery] = useState("");
 
-  // ----------Input filter----------//
-  const filteredItems = products.filter(
-    (product) =>
-      product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !==
-      -1
-  );
-
-  // ----------Radio Filter----------//
-  const handleChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-  //---------handleInputChange-----------//
-  const handleInputChange = (event) => setQuery(event.target.value);
-  //----------Buttons Filter----------//
-  const handleClick = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-
-  function filteredData(products, selected, query) {
-    let filteredProducts = products;
-
-    //---------Filtering Input Items---------//
-    if (query) {
-      filteredProducts = filteredItems;
-    }
-
-    //---------Selected Filter---------//
-    if (selected) {
-      filteredProducts = filteredProducts.filter(
-        ({ category, color, company, newPrice, title }) =>
-          category === selected ||
-          color === selected ||
-          company === selected ||
-          newPrice === selected ||
-          title === selected
-      );
-    }
-
-    return filteredProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
-        <Card
-          key={Math.random()}
-          img={img}
-          title={title}
-          star={star}
-          reviews={reviews}
-          prevPrice={prevPrice}
-          newPrice={newPrice}
-        />
-      )
-    );
-  }
-
-  const result = filteredData(products, selectedCategory, query);
+const Data = () => {
+  const products = [
+    {
+      img: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
+      title: "Nike Air Monarch IV",
+      star: <AiFillStar className="rating-star" />,
+      reviews: "(123 reviews)",
+      prevPrice: "$140,00",
+      newPrice: "200",
+      company: "Nike",
+      color: "white",
+      category: "sneakers",
+    },
+    {
+      img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
+      title: "Nike Air Vapormax Plus",
+      star: <AiFillStar className="rating-star" />,
+      reviews: "(123 reviews)",
+      prevPrice: "$140,00",
+      newPrice: "200",
+      company: "Nike",
+      color: "red",
+      category: "sneakers",
+    },
+  ];
 
   return (
-    <>
-      <Sidebar handleChange={handleChange} />
-      <Nav query={query} handleInputChange={handleInputChange} />
-      <Recommended handleClick={handleClick} />
-      <Products result={result} />
-    </>
+    <div>
+      <App products={products} />
+    </div>
   );
 };
 
-export default App;
-
+export  {Data, products};

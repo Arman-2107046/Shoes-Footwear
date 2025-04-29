@@ -1,4 +1,4 @@
-.sidebar-title{
+/* .sidebar-title{
     font-size: 22px;
     font-weight: normal;
     margin-bottom: 20px;
@@ -20,4 +20,74 @@
 }
 .logo-container h1{
     margin: .7rem;
+} */
+
+
+
+/* Base styles */
+.sidebar-title {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    width: 15%;
+    position: fixed;
+    height: 100%;
+    border-right: 2px solid #e5e5e5;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin-bottom: 0.7rem;
+}
+
+.logo-container h1 {
+    margin: 0.7rem;
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .sidebar {
+        width: 25%;
+        height: 100%;
+        position: fixed;
+        border-right: 2px solid #e5e5e5;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 15%;
+        height: 100%;
+        position: fixed;
+        border-right: 2px solid #e5e5e5;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .logo-container h1 {
+        font-size: 2rem;
+    }
 }
