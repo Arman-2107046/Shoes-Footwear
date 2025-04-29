@@ -2,7 +2,7 @@ import React from 'react'
 import './Category.css'
 const Category = () => {
   return (
-    <div>
+    <div  className='sidebar-items'>
     <h2 className='sidebar-title'>Category</h2>
 
     <div>
