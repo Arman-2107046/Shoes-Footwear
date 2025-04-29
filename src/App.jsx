@@ -5,6 +5,8 @@ import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
 
 const App = () => {
+
+
   return (
     <>
       <Sidebar />
